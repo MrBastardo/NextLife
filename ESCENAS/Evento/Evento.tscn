@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://clf24g2qfyqsm"]
+
+[ext_resource type="Script" uid="uid://d2y4npqtdweih" path="res://ESCENAS/Evento/ControladorEvento.gd" id="1_wk5e5"]
+[ext_resource type="Script" uid="uid://bl6o3277mahv5" path="res://ESCENAS/Evento/InterfazEstadoEvento.gd" id="2_okac3"]
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="3_jjuxa"]
+[ext_resource type="Script" uid="uid://b7k5xt8rq7wrh" path="res://ESCENAS/Evento/GestorEvento.gd" id="4_fghit"]
+
+[node name="ControladorEvento" type="Panel" unique_id=1363780531]
+offset_right = 452.0
+offset_bottom = 553.0
+script = ExtResource("1_wk5e5")
+metadata/_edit_lock_ = true
+
+[node name="InterfazEstadoEvento" type="Button" parent="." unique_id=1165649758]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 77.0
+offset_right = 352.0
+offset_bottom = 333.0
+text = "Terminar"
+script = ExtResource("2_okac3")
+
+[node name="Habito" type="Button" parent="." unique_id=1378051692]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 384.0
+offset_bottom = 40.0
+script = ExtResource("3_jjuxa")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="CancelarEvento" type="Button" parent="." unique_id=1161395287]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 338.0
+offset_right = 352.0
+offset_bottom = 388.0
+text = "Cancelar"
+
+[node name="Contador" type="Label" parent="." unique_id=1869781272]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 394.0
+offset_right = 370.0
+offset_bottom = 417.0
+text = "Se Cancelara Automaticamente en : 00"
+
+[node name="Reproductor" type="AudioStreamPlayer" parent="." unique_id=94149023]
+
+[node name="Timer" type="Timer" parent="." unique_id=518053542]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="GestorEvento" type="Node" parent="." unique_id=148517963]
+script = ExtResource("4_fghit")

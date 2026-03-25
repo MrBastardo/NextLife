@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ciof5uxk0jld"]
+
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="1_5ui56"]
+
+[node name="Registros" type="HBoxContainer" unique_id=1274289813]
+offset_right = 44.0
+offset_bottom = 31.0
+
+[node name="Dia" type="Button" parent="." unique_id=2021674366]
+layout_mode = 2
+script = ExtResource("1_5ui56")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Fecha" type="Button" parent="." unique_id=593247141]
+layout_mode = 2
+script = ExtResource("1_5ui56")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Tiempo" type="Button" parent="." unique_id=365518663]
+layout_mode = 2
+script = ExtResource("1_5ui56")
+metadata/_custom_type_script = "uid://dkthc5clkch61"

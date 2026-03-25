@@ -1,0 +1,405 @@
+[gd_scene format=3 uid="uid://cdif65ffj07qt"]
+
+[ext_resource type="Script" uid="uid://d3siqd23j5ooq" path="res://ESCENAS/DiseñoHabito/ControladorDiseñoHabito.gd" id="1_jo400"]
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="2_mv3ft"]
+[ext_resource type="Script" uid="uid://ctlkow4mj3anp" path="res://2CLASES/ClaseEditorTexto.gd" id="3_kg05f"]
+[ext_resource type="Script" uid="uid://83pruqtwdglm" path="res://2CLASES/ClaseFondo.gd" id="4_6xpln"]
+[ext_resource type="Script" uid="uid://b4b36lpkbktbs" path="res://ESCENAS/DiseñoHabito/InterfazSeñal.gd" id="5_52bqy"]
+[ext_resource type="Script" uid="uid://c87uprqt0asrp" path="res://2CLASES/ClaseContador.gd" id="6_uwh3a"]
+[ext_resource type="Script" uid="uid://dc05up1tw5uwu" path="res://ESCENAS/DiseñoHabito/InterfazCuando.gd" id="7_7k820"]
+[ext_resource type="Script" uid="uid://dkeisjthdwf76" path="res://2CLASES/ClaseFondoPersonalizado.gd" id="8_altdl"]
+[ext_resource type="Script" uid="uid://buyg4tgprjqea" path="res://ESCENAS/DiseñoHabito/InterfazVerificador.gd" id="9_y4cp3"]
+[ext_resource type="Script" uid="uid://ddq66x1qji8wk" path="res://ESCENAS/DiseñoHabito/GestorDiseñoHabito.gd" id="10_rs43l"]
+
+[node name="ControladorDiseñoHabito" type="Control" unique_id=1802582723]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jo400")
+metadata/_edit_lock_ = true
+
+[node name="Fondo" type="Panel" parent="." unique_id=2131536807]
+layout_mode = 0
+offset_left = -4.0
+offset_right = 453.0
+offset_bottom = 37.0
+
+[node name="Volver" type="Button" parent="Fondo" unique_id=1315419019]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 64.0
+offset_bottom = 34.0
+text = "Volver"
+
+[node name="Guardar" type="Button" parent="Fondo" unique_id=1717811682]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 3.0
+offset_right = 450.0
+offset_bottom = 34.0
+text = "Guardar"
+
+[node name="HABITO" type="VBoxContainer" parent="." unique_id=551440908]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 41.0
+offset_right = 285.0
+offset_bottom = 177.0
+
+[node name="SEÑAL" type="HBoxContainer" parent="HABITO" unique_id=992593330]
+layout_mode = 2
+
+[node name="Texto" type="Button" parent="HABITO/SEÑAL" unique_id=817123921]
+layout_mode = 2
+text = "SEÑAL :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Señal" type="LineEdit" parent="HABITO/SEÑAL" unique_id=287508338]
+layout_mode = 2
+script = ExtResource("3_kg05f")
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="CheckBox" type="CheckBox" parent="HABITO/SEÑAL" unique_id=753579432]
+layout_mode = 2
+
+[node name="Abrir" type="Button" parent="HABITO/SEÑAL" unique_id=1720083]
+layout_mode = 2
+text = "Agregar"
+
+[node name="QUE" type="HBoxContainer" parent="HABITO" unique_id=1197980869]
+layout_mode = 2
+
+[node name="Texto" type="Button" parent="HABITO/QUE" unique_id=744615443]
+layout_mode = 2
+text = "QUE :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Que" type="LineEdit" parent="HABITO/QUE" unique_id=35012507]
+layout_mode = 2
+placeholder_text = " Accion"
+alignment = 1
+script = ExtResource("3_kg05f")
+Interaccion = 1
+Editable = true
+TextoMaximo = 16
+PermitirTexto = true
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="CUANDO" type="HBoxContainer" parent="HABITO" unique_id=1737718565]
+layout_mode = 2
+
+[node name="Texto" type="Button" parent="HABITO/CUANDO" unique_id=834052092]
+layout_mode = 2
+text = "CUANDO :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Complemento" type="LineEdit" parent="HABITO/CUANDO" unique_id=638140574]
+layout_mode = 2
+script = ExtResource("3_kg05f")
+Interaccion = 1
+Editable = true
+TextoMaximo = 12
+PermitirTexto = true
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="Cuando" type="LineEdit" parent="HABITO/CUANDO" unique_id=1466640782]
+layout_mode = 2
+placeholder_text = "Tiempo"
+alignment = 1
+script = ExtResource("3_kg05f")
+Interaccion = 0
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="Abrir" type="Button" parent="HABITO/CUANDO" unique_id=2063494175]
+layout_mode = 2
+text = "Abrir"
+
+[node name="DONDE" type="HBoxContainer" parent="HABITO" unique_id=1902530512]
+layout_mode = 2
+
+[node name="Texto" type="Button" parent="HABITO/DONDE" unique_id=1327507649]
+layout_mode = 2
+text = "DONDE :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Complemento" type="LineEdit" parent="HABITO/DONDE" unique_id=209642008]
+layout_mode = 2
+script = ExtResource("3_kg05f")
+Interaccion = 1
+Editable = true
+TextoMaximo = 12
+PermitirTexto = true
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="Donde" type="LineEdit" parent="HABITO/DONDE" unique_id=1618323693]
+layout_mode = 2
+placeholder_text = "  Lugar"
+alignment = 1
+script = ExtResource("3_kg05f")
+Interaccion = 1
+Editable = true
+TextoMaximo = 14
+PermitirTexto = true
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="Interfaces" type="Control" parent="." unique_id=690502559]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 181.0
+offset_right = 336.0
+offset_bottom = 387.0
+metadata/_edit_lock_ = true
+
+[node name="InterfazSeñal" type="Panel" parent="Interfaces" unique_id=1994008724 node_paths=PackedStringArray("Abrir", "Cerrar")]
+visible = false
+layout_mode = 0
+offset_top = -1.0
+offset_right = 270.0
+offset_bottom = 143.0
+script = ExtResource("4_6xpln")
+Abrir = NodePath("../../HABITO/SEÑAL/Abrir")
+Cerrar = NodePath("../Cerrar")
+PosicionBotonCerrar = Vector2(273, -1)
+metadata/_custom_type_script = "uid://83pruqtwdglm"
+
+[node name="Desplazador" type="ScrollContainer" parent="Interfaces/InterfazSeñal" unique_id=1917485217]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 266.0
+offset_bottom = 144.0
+
+[node name="Contenedor" type="VBoxContainer" parent="Interfaces/InterfazSeñal/Desplazador" unique_id=1599793000]
+layout_mode = 2
+
+[node name="Script" type="Node" parent="Interfaces/InterfazSeñal" unique_id=438771849]
+script = ExtResource("5_52bqy")
+
+[node name="InterfazCuando" type="Panel" parent="Interfaces" unique_id=793535923 node_paths=PackedStringArray("Abrir", "Cerrar")]
+visible = false
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 103.0
+script = ExtResource("4_6xpln")
+Abrir = NodePath("../../HABITO/CUANDO/Abrir")
+Cerrar = NodePath("../Cerrar")
+PosicionBotonCerrar = Vector2(223, 0)
+metadata/_custom_type_script = "uid://83pruqtwdglm"
+
+[node name="Hora" type="Button" parent="Interfaces/InterfazCuando" unique_id=204935015 node_paths=PackedStringArray("Aumenta", "Disminuye")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 72.0
+offset_bottom = 67.0
+text = "00"
+script = ExtResource("6_uwh3a")
+Aumenta = NodePath("Aumenta")
+Disminuye = NodePath("Disminuye")
+MaximoArriba = 12
+metadata/_custom_type_script = "uid://c87uprqt0asrp"
+
+[node name="Aumenta" type="Button" parent="Interfaces/InterfazCuando/Hora" unique_id=1122246131]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 69.0
+offset_bottom = -2.0
+text = "^"
+
+[node name="Disminuye" type="Button" parent="Interfaces/InterfazCuando/Hora" unique_id=1442354546]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 69.0
+offset_bottom = 64.0
+text = "v"
+
+[node name="Minuto" type="Button" parent="Interfaces/InterfazCuando" unique_id=156337387 node_paths=PackedStringArray("Aumenta", "Disminuye")]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 36.0
+offset_right = 145.0
+offset_bottom = 67.0
+text = "00"
+script = ExtResource("6_uwh3a")
+Aumenta = NodePath("Aumenta")
+Disminuye = NodePath("Disminuye")
+MaximoArriba = 59
+metadata/_custom_type_script = "uid://c87uprqt0asrp"
+
+[node name="Aumenta" type="Button" parent="Interfaces/InterfazCuando/Minuto" unique_id=1943863839]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 70.0
+offset_bottom = -2.0
+text = "^"
+
+[node name="Disminuye" type="Button" parent="Interfaces/InterfazCuando/Minuto" unique_id=2117867563]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 70.0
+offset_bottom = 64.0
+text = "v"
+
+[node name="Tanda" type="Button" parent="Interfaces/InterfazCuando" unique_id=630375734 node_paths=PackedStringArray("Aumenta", "Disminuye")]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 36.0
+offset_right = 217.0
+offset_bottom = 67.0
+text = "00"
+script = ExtResource("6_uwh3a")
+Aumenta = NodePath("Aumenta")
+Disminuye = NodePath("Disminuye")
+Tanda = true
+metadata/_custom_type_script = "uid://c87uprqt0asrp"
+
+[node name="Aumenta" type="Button" parent="Interfaces/InterfazCuando/Tanda" unique_id=539434170]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 69.0
+offset_bottom = -2.0
+text = "^"
+
+[node name="Disminuye" type="Button" parent="Interfaces/InterfazCuando/Tanda" unique_id=2106221060]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 69.0
+offset_bottom = 64.0
+text = "v"
+
+[node name="Script" type="Node" parent="Interfaces/InterfazCuando" unique_id=991731971]
+script = ExtResource("7_7k820")
+
+[node name="Colocar" type="Button" parent="Interfaces/InterfazCuando" unique_id=1054481600]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 33.0
+offset_right = 290.0
+offset_bottom = 64.0
+text = "Colocar"
+
+[node name="Cerrar" type="Button" parent="Interfaces" unique_id=1811025189]
+visible = false
+layout_mode = 0
+offset_left = 223.0
+offset_right = 290.0
+offset_bottom = 31.0
+text = "Cerrar"
+
+[node name="InterfazVerificador" type="Panel" parent="." unique_id=1949064950]
+layout_mode = 0
+offset_right = 454.0
+offset_bottom = 550.0
+script = ExtResource("8_altdl")
+ColorBordeArriba = 1
+ColorBordeAbajo = 1
+metadata/_custom_type_script = "uid://dkeisjthdwf76"
+metadata/_edit_lock_ = true
+
+[node name="Script" type="Node" parent="InterfazVerificador" unique_id=2108568836]
+script = ExtResource("9_y4cp3")
+
+[node name="QUE" type="HBoxContainer" parent="InterfazVerificador" unique_id=1450069474]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 112.0
+offset_right = 212.0
+offset_bottom = 143.0
+metadata/_edit_group_ = true
+
+[node name="Texto" type="Button" parent="InterfazVerificador/QUE" unique_id=778172648]
+layout_mode = 2
+text = "Que :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Check" type="CheckBox" parent="InterfazVerificador/QUE" unique_id=884284033]
+layout_mode = 2
+
+[node name="Advertencia" type="Button" parent="InterfazVerificador/QUE" unique_id=979391760]
+layout_mode = 2
+text = "!"
+
+[node name="CUANDO" type="HBoxContainer" parent="InterfazVerificador" unique_id=1562051705]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 147.0
+offset_right = 240.0
+offset_bottom = 178.0
+metadata/_edit_group_ = true
+
+[node name="Texto" type="Button" parent="InterfazVerificador/CUANDO" unique_id=608988368]
+layout_mode = 2
+text = "Cuando :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Check" type="CheckBox" parent="InterfazVerificador/CUANDO" unique_id=1670333878]
+layout_mode = 2
+
+[node name="Advertencia" type="Button" parent="InterfazVerificador/CUANDO" unique_id=1229310129]
+layout_mode = 2
+text = "!"
+
+[node name="DONDE" type="HBoxContainer" parent="InterfazVerificador" unique_id=1372906705]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 182.0
+offset_right = 231.0
+offset_bottom = 213.0
+metadata/_edit_group_ = true
+
+[node name="Texto" type="Button" parent="InterfazVerificador/DONDE" unique_id=469792826]
+layout_mode = 2
+text = "Donde :"
+script = ExtResource("2_mv3ft")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Check" type="CheckBox" parent="InterfazVerificador/DONDE" unique_id=436517709]
+layout_mode = 2
+
+[node name="Advertencia" type="Button" parent="InterfazVerificador/DONDE" unique_id=619606229]
+layout_mode = 2
+text = "!"
+
+[node name="GuiaEstados" type="Panel" parent="InterfazVerificador" unique_id=1212172403]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 216.0
+offset_right = 310.0
+offset_bottom = 371.0
+
+[node name="GuiaTexto" type="Label" parent="InterfazVerificador/GuiaEstados" unique_id=272298480]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 189.0
+offset_bottom = 116.0
+autowrap_mode = 3
+
+[node name="Modificar" type="Button" parent="InterfazVerificador/GuiaEstados" unique_id=1569771677]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 120.0
+offset_right = 137.0
+offset_bottom = 151.0
+text = "Modificar"
+
+[node name="Cerrar" type="Button" parent="InterfazVerificador/GuiaEstados" unique_id=1860275856]
+layout_mode = 0
+offset_left = 196.0
+offset_right = 254.0
+offset_bottom = 31.0
+text = "Cerrar"
+
+[node name="ControladorDiseñoHabito" type="Node" parent="." unique_id=1519861327]
+script = ExtResource("10_rs43l")

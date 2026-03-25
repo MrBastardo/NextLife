@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="NextLife"
+run/main_scene="uid://bw1qv1fhwuc0y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[autoload]
+
+ServicioRecursos="*uid://b2rc43oc5h1qj"
+AdaptadorRecursoHabito="*uid://n8x5l4u2auwk"
+ServicioDispositivo="*uid://dxhqmall2spf7"
+ServicioLenguaje="*uid://dxwqaycmsb5a8"
+ServicioEvento="*uid://bn7als7c1lem1"
+
+[display]
+
+window/size/viewport_width=450
+window/size/viewport_height=550
+window/stretch/mode="canvas_items"
 
 [physics]
 
@@ -20,6 +34,7 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

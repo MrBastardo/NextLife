@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://7svmu3eywehk"]
+
+[ext_resource type="Script" uid="uid://ledr0q770a3r" path="res://ESCENAS/Inicio/InterfazHabito.gd" id="1_lvewb"]
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="2_bkj1g"]
+
+[node name="InterfazHabito" type="HBoxContainer" unique_id=1102173274]
+offset_right = 58.0
+offset_bottom = 31.0
+script = ExtResource("1_lvewb")
+
+[node name="Numero" type="Button" parent="." unique_id=1128681617]
+layout_mode = 2
+script = ExtResource("2_bkj1g")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="EstadoHabito" type="Button" parent="." unique_id=1977091377]
+layout_mode = 2
+script = ExtResource("2_bkj1g")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Habito" type="Button" parent="." unique_id=1520227739]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=632905542]
+layout_mode = 2
+
+[node name="Eliminar" type="Button" parent="." unique_id=709379166]
+layout_mode = 2
+text = "X"

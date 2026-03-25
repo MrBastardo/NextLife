@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ymtg8thkf841"]
+
+[ext_resource type="Script" uid="uid://bv6ke6uu0w8mn" path="res://ESCENAS/DiseñoHabito/InstInterfazSeñal.gd" id="1_m30jn"]
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="2_20lle"]
+[ext_resource type="Script" uid="uid://dtixms5rvu5hd" path="res://2CLASES/ClaseCheckBoxUnico.gd" id="3_eghbt"]
+[ext_resource type="Script" uid="uid://jflyduflj5i4" path="res://2CLASES/ClaseReproductorUnico.gd" id="3_gyd15"]
+
+[node name="InstInterfazSenal" type="HBoxContainer" unique_id=752368640]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.5
+offset_right = -215.0
+offset_bottom = -518.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m30jn")
+
+[node name="NombreSonido" type="Button" parent="." unique_id=1758505841]
+layout_mode = 2
+script = ExtResource("2_20lle")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="Contenedor" type="MarginContainer" parent="." unique_id=251766057]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Contenedor" unique_id=1748406135]
+layout_mode = 2
+
+[node name="Contenedor" type="HBoxContainer" parent="Contenedor" unique_id=963338714]
+layout_mode = 2
+
+[node name="ReproducirSonido" type="Button" parent="Contenedor/Contenedor" unique_id=314642318]
+layout_mode = 2
+text = "▶"
+
+[node name="Label" type="Label" parent="Contenedor/Contenedor" unique_id=1240708482]
+layout_mode = 2
+text = "00:00"
+
+[node name="ResetearSonido" type="Button" parent="Contenedor/Contenedor" unique_id=1575694272]
+layout_mode = 2
+text = "⟳"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=389458145]
+layout_mode = 2
+script = ExtResource("3_eghbt")
+Grupo = "\"Senal\""
+metadata/_custom_type_script = "uid://dtixms5rvu5hd"
+
+[node name="Reproductor" type="AudioStreamPlayer" parent="." unique_id=31144121]
+script = ExtResource("3_gyd15")
+metadata/_custom_type_script = "uid://jflyduflj5i4"

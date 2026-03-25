@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://bw1qv1fhwuc0y"]
+
+[ext_resource type="Script" uid="uid://ch7182ganegja" path="res://ESCENAS/Inicio/ControladorInicio.gd" id="1_sidb3"]
+[ext_resource type="Script" uid="uid://dm2skcw13k7tl" path="res://ESCENAS/Inicio/InterfazContenedorHabitos.gd" id="2_kju6v"]
+[ext_resource type="Script" uid="uid://dkthc5clkch61" path="res://2CLASES/ClaseTextoPredeterminado.gd" id="3_a56y6"]
+[ext_resource type="Script" uid="uid://bg3lv2rm3lxxi" path="res://ESCENAS/Inicio/InterfazReloj.gd" id="4_m8cxu"]
+[ext_resource type="Script" uid="uid://dy4w4lt687v74" path="res://ESCENAS/Inicio/InterfazConfiguracion.gd" id="5_jih61"]
+[ext_resource type="Script" uid="uid://dkeisjthdwf76" path="res://2CLASES/ClaseFondoPersonalizado.gd" id="6_ungm1"]
+[ext_resource type="Script" uid="uid://c8jo7yvudyqgk" path="res://2CLASES/ClaseCheckButton.gd" id="7_v6ec2"]
+[ext_resource type="Script" uid="uid://ctlkow4mj3anp" path="res://2CLASES/ClaseEditorTexto.gd" id="8_mulup"]
+[ext_resource type="Script" uid="uid://bmsoijiqrub3o" path="res://ESCENAS/Inicio/InterfazEliminacionHabito.gd" id="9_37qgv"]
+[ext_resource type="Script" uid="uid://c6piaadaqtapy" path="res://ESCENAS/Inicio/GestorInicio.gd" id="10_ui0ny"]
+
+[node name="ControladorInicio" type="Control" unique_id=393599055]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sidb3")
+metadata/_edit_lock_ = true
+
+[node name="InterfazContenedorHabitos" type="ScrollContainer" parent="." unique_id=1859371226]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 38.0
+offset_right = 448.0
+offset_bottom = 347.0
+script = ExtResource("2_kju6v")
+metadata/_edit_lock_ = true
+
+[node name="ContenedorHabitos" type="VBoxContainer" parent="InterfazContenedorHabitos" unique_id=539850932]
+layout_mode = 2
+
+[node name="Contenedor" type="HBoxContainer" parent="InterfazContenedorHabitos/ContenedorHabitos" unique_id=219931636]
+layout_mode = 2
+
+[node name="CrearHabito" type="Button" parent="InterfazContenedorHabitos/ContenedorHabitos/Contenedor" unique_id=1948587702]
+layout_mode = 2
+text = "+"
+
+[node name="Texto" type="Button" parent="InterfazContenedorHabitos/ContenedorHabitos/Contenedor" unique_id=571659127]
+layout_mode = 2
+text = "Crear Nuevo Habito"
+script = ExtResource("3_a56y6")
+metadata/_custom_type_script = "uid://dkthc5clkch61"
+
+[node name="InterfazReloj" type="Button" parent="." unique_id=1820093544]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 3.0
+offset_right = 416.0
+offset_bottom = 34.0
+text = "00:00:00 AM"
+script = ExtResource("4_m8cxu")
+
+[node name="InterfazConfiguracion" type="Button" parent="." unique_id=984904398]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 3.0
+offset_right = 448.0
+offset_bottom = 34.0
+text = "⚙️"
+script = ExtResource("5_jih61")
+
+[node name="Fondo" type="Panel" parent="InterfazConfiguracion" unique_id=1760538726]
+visible = false
+layout_mode = 0
+offset_left = -423.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 547.0
+script = ExtResource("6_ungm1")
+metadata/_custom_type_script = "uid://dkeisjthdwf76"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="InterfazConfiguracion/Fondo" unique_id=409144218]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 81.0
+offset_right = 336.0
+offset_bottom = 272.0
+
+[node name="Panel" type="Panel" parent="InterfazConfiguracion/Fondo/Panel" unique_id=1750646269]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 188.0
+
+[node name="Lenguaje" type="Button" parent="InterfazConfiguracion/Fondo/Panel" unique_id=199227448]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 82.0
+offset_bottom = 34.0
+text = "Lenguaje"
+
+[node name="ContenedorLenguaje" type="VBoxContainer" parent="InterfazConfiguracion/Fondo/Panel/Lenguaje" unique_id=554513609]
+visible = false
+layout_mode = 0
+offset_left = 84.0
+offset_top = 2.0
+offset_right = 193.0
+offset_bottom = 68.0
+
+[node name="Ingles" type="CheckButton" parent="InterfazConfiguracion/Fondo/Panel/Lenguaje/ContenedorLenguaje" unique_id=572287480]
+layout_mode = 2
+text = "Ingles"
+script = ExtResource("7_v6ec2")
+Grupo = "Lenguaje"
+metadata/_custom_type_script = "uid://c8jo7yvudyqgk"
+
+[node name="Español" type="CheckButton" parent="InterfazConfiguracion/Fondo/Panel/Lenguaje/ContenedorLenguaje" unique_id=446918380]
+layout_mode = 2
+text = "Español"
+script = ExtResource("7_v6ec2")
+Grupo = "Lenguaje"
+metadata/_custom_type_script = "uid://c8jo7yvudyqgk"
+
+[node name="FormatoHorario" type="Button" parent="InterfazConfiguracion/Fondo/Panel" unique_id=511463778]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 37.0
+offset_right = 82.0
+offset_bottom = 68.0
+text = "Formato"
+
+[node name="ContenedorFormatos" type="VBoxContainer" parent="InterfazConfiguracion/Fondo/Panel/FormatoHorario" unique_id=506688844]
+visible = false
+layout_mode = 0
+offset_left = 84.0
+offset_top = -32.0
+offset_right = 163.0
+offset_bottom = 34.0
+
+[node name="12H" type="CheckButton" parent="InterfazConfiguracion/Fondo/Panel/FormatoHorario/ContenedorFormatos" unique_id=1385128350]
+layout_mode = 2
+text = "12H"
+script = ExtResource("7_v6ec2")
+Grupo = "Formato"
+metadata/_custom_type_script = "uid://c8jo7yvudyqgk"
+
+[node name="24H" type="CheckButton" parent="InterfazConfiguracion/Fondo/Panel/FormatoHorario/ContenedorFormatos" unique_id=379017752]
+layout_mode = 2
+text = "24H"
+script = ExtResource("7_v6ec2")
+Grupo = "Formato"
+metadata/_custom_type_script = "uid://c8jo7yvudyqgk"
+
+[node name="CerrarConfiguracion" type="Button" parent="InterfazConfiguracion/Fondo" unique_id=466287041]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 81.0
+offset_right = 412.0
+offset_bottom = 112.0
+text = "Cerrar"
+
+[node name="GuardarConfiguracion" type="Button" parent="InterfazConfiguracion/Fondo" unique_id=850458896]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 115.0
+offset_right = 412.0
+offset_bottom = 146.0
+text = "Guardar"
+
+[node name="InterfazEliminacionHabito" type="Panel" parent="." unique_id=1996218910]
+visible = false
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 554.0
+script = ExtResource("6_ungm1")
+metadata/_custom_type_script = "uid://dkeisjthdwf76"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="InterfazEliminacionHabito" unique_id=1386602104]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 128.0
+offset_right = 333.0
+offset_bottom = 251.0
+
+[node name="Panel" type="Panel" parent="InterfazEliminacionHabito/Panel" unique_id=1465616904]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 226.0
+offset_bottom = 86.0
+
+[node name="Texto" type="Label" parent="InterfazEliminacionHabito/Panel/Panel" unique_id=872720806]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 225.0
+offset_bottom = 75.0
+text = "Si deseas Eliminar el Habito de forma PERMANENTE
+ESCRIBA ( Si ) Y CONFIRME"
+autowrap_mode = 3
+
+[node name="Cerrar" type="Button" parent="InterfazEliminacionHabito/Panel" unique_id=1742310635]
+layout_mode = 0
+offset_left = 232.0
+offset_right = 290.0
+offset_bottom = 31.0
+text = "Cerrar"
+
+[node name="EscribirClave" type="LineEdit" parent="InterfazEliminacionHabito/Panel" unique_id=452695622]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 89.0
+offset_right = 132.5
+offset_bottom = 120.0
+placeholder_text = "Si"
+alignment = 1
+script = ExtResource("8_mulup")
+Interaccion = 1
+Editable = true
+TextoMaximo = 6
+PermitirTexto = true
+metadata/_custom_type_script = "uid://ctlkow4mj3anp"
+
+[node name="OK" type="Button" parent="InterfazEliminacionHabito/Panel/EscribirClave" unique_id=1173458121]
+layout_mode = 0
+offset_left = 73.0
+offset_right = 104.0
+offset_bottom = 31.0
+text = "OK"
+
+[node name="Script" type="Node" parent="InterfazEliminacionHabito" unique_id=1405881153]
+script = ExtResource("9_37qgv")
+
+[node name="GestorInicio" type="Node" parent="." unique_id=225301476]
+script = ExtResource("10_ui0ny")
